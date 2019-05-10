@@ -1,6 +1,6 @@
 {
   "name": "vue-amplitude",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vue-cli plugin for sending amplitude page load and click events",
   "main": "src/index.js",
   "author": "tamara-bain",

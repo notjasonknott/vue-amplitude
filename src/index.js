@@ -83,6 +83,10 @@ class VueAmplitude {
     return _deviceId();
   }
 
+  get instance() {
+    return amplitude.getInstance();
+  }
+
   pageLoadEvent(route) {
     if (this._initialized !== true) {
       console.error("init must be called for Amplitude before calling onPageLoad");
