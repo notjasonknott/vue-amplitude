@@ -38,13 +38,14 @@ You can send a click event with the following directive:
 The following data can be passed to v-amplitude click:
 
 route (required - a vue router route object)
+name (optional – a custom event name)
 description (required - a string description)
 destination (optional - where this button takes the user to)
 section (optional - section this object appears on the page)
 
 Example:
 
-    <button v-amplitude-click="{route: this.$route, description: 'Login Button', destination: 'http://github.com', section: 'footer'}" />
+    <button v-amplitude-click="{route: this.$route, name: 'Submit Shipping Method', description: 'Login Button', destination: 'http://github.com', section: 'footer'}" />
 
 The following data will also be set by default for every click event: 
 - page
