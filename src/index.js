@@ -52,9 +52,9 @@ class _PageLoadEvent extends _Event {
 }
 
 class _ClickEvent extends _Event {
-  constructor(description, destination, section, global_event_properties) {
+  constructor(name = null, description, destination, section, global_event_properties) {
     super(global_event_properties);
-    this.name = "click";
+    this.name = name || 'click';
     this.properties = {
       'ITEM-DESCRIPTION': description,
       'LINK-DESTINATION': destination,
@@ -104,7 +104,7 @@ class VueAmplitude {
     }
   }
 
-  clickEvent({ route, description, destination=null, section=null }) {
+  clickEvent({ route, name, description, destination=null, section=null }) {
     if (this._initialized !== true) {
       console.error("init must be called for Amplitude before calling clickEvent");
       return;
@@ -117,7 +117,7 @@ class VueAmplitude {
       return;
     }
     const geps = _getGlobalEventProperties(route);
-    const event = new _ClickEvent(description, destination, section, geps);
+    const event = new _ClickEvent(name, description, destination, section, geps);
     event.sendEvent();
 
     if (this._debug) {
